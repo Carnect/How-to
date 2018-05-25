@@ -85,7 +85,7 @@ request.post(options, (err, request, body) => {
 5. Click Send
 6. View your response
 
-![postman-example](/home/nish/work/How-to/auth-api/postman-00.png) 
+![postman-example](postman-00.png?raw=true) 
 
 #### Authentication Success
 If the request is succesful you with receive a `HTTP 200` with the following body structure:
@@ -209,7 +209,7 @@ request.get(options, (err, request, body) => {
 5. Click Send
 6. View your response
 
-![postman-example](/home/nish/work/How-to/auth-api/postman-01.png) 
+![postman-example](postman-01.png?raw=true) 
 
 ## API Documentation
 
