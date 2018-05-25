@@ -12,6 +12,7 @@
 
 ## Introduction
 The Carnect Authentication API serves as a single service where the user only needs to authenticate once to gain access to all of our APIs and services. The API follows the REST conventions and the JSON Web Token (JWT) approach.
+foobar
 
 ## Requirements
 To communicate with our API, one requires *either*:
@@ -221,29 +222,3 @@ The complete intensive API documentation is available at `/docs` endpoint of the
 
 ## Further Help
 Please contact us for additional questions and queries
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
