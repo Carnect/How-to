@@ -36,8 +36,44 @@ In general: Please use the [online documentation](http://doc.carnect.com/ota2007
 | DriverType Age | Integer | :white_check_mark: | :x: |Required for underage and senior drivers, to get information about additional charges|
 | RateQualifier RateQualifier | String | :white_check_mark: | :x: |Defines a promotion code used to get discounted offers. If the promotion code is invalid, no discount is applied.|
 
+
+
+### Examples
+
+
 In 2012:
 
+```xml
+<OTA_VehAvailRateRQ xsi:schemaLocation="http://www.opentravel.org/OTA/2003/05 OTA_VehAvailRateRQ.xsd" Target="Test" Version="1.000" SequenceNmbr="1" PrimaryLangID="EN" ReqRespVersion="small" xmlns="http://www.opentravel.org/OTA/2003/05">
+  <POS>
+    <Source ISOCountry="DE" ISOCurrency="EUR">
+      <RequestorID Type="username" ID_Context="password" />
+    </Source>
+  </POS>
+  <VehAvailRQCore>
+    <VehRentalCore PickUpDateTime="2015-10-20T12:00:00" ReturnDateTime="2015-10-27T12:00:00">
+      <PickUpLocation LocationCode="1931" CodeContext="aipid" />
+      <ReturnLocation LocationCode="1931" CodeContext="aipid" />
+    </VehRentalCore>
+  </VehAvailRQCore>
+</OTA_VehAvailRateRQ>
 ```
 
+In 2007
+
+```xml
+<VehAvailRateRQ xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="1.0" Version="1.0" ReqRespVersion="large">
+  <POS>
+    <Source ISOCountry="US">
+      <RequestorID Type="username" ID_Context="password" />
+    </Source>
+  </POS>
+  <VehAvailRQCore RateQueryType="Live">
+    <RateQueryParameterType>2</RateQueryParameterType>
+    <VehRentalCore PickUpDateTime="2018-06-12T09:00:00.000" ReturnDateTime="2018-06-16T09:00:00.000">
+      <PickUpLocation LocationCode="1931" CodeContext="1" />
+      <ReturnLocation LocationCode="1931" CodeContext="1" />
+    </VehRentalCore>
+  </VehAvailRQCore>
+</VehAvailRateRQ>
 ```
