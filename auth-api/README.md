@@ -5,14 +5,18 @@
 1. [Introduction](#introduction)
 2. [Requirements](#requirements)
 3. [URLs](#urls)
-4. [Obtaining Authentication Token](#obtaining-authentication-token)
+4. [Obtaining an Authentication Token](#obtaining-authentication-token)
 5. [Using Authentication Token](#using-authentication-token)
-6. [API Documentation](#api-documentation)
+6. [Full API Documentation](#api-documentation)
 7. [Further Help](#further-help)
 
 ## Introduction
-The Carnect Authentication API serves as a single service where the user only needs to authenticate once to gain access to all of our APIs and services. The API follows the REST conventions and the JSON Web Token (JWT) approach.
-foobar
+Some of our Carnect applications are protected and the user needs to be authenticated before he is allow to use them, this is namely the case for the CARNECT Bridge application. The authentication of CARNECT Bridge users is handled via the CARNECT Authentication API. It is prepared to serve serves as a single service where the Client application only needs to authenticate once to gain access to all of our CARNECT APIs and services it has permission to. 
+
+This service is public and can therefore also be used by CARNECT’s Client Partner applications to implement a single-sign-on allowing their users to access Bridge and the Partner's application(s) with the same user login. Once the user is authenticated by the Partner application, the application can also request the authentication of this user for CARNECT Bridge by sending the CARNECT specific login and password via the API. A mapping from the partner login table to the Carnect login table maybe needed. 
+The advantage is that the Client Partner user does not have to login to CARNECT Bridge after he has looged in to the Partner's application, but can be directed to Bridge with the Carnect authentication API being called in the background.
+
+The CARNECT Authetication API follows the REST conventions and the JSON Web Token (JWT) approach.
 
 ## Requirements
 To communicate with our API, one requires *either*:
@@ -28,9 +32,11 @@ Environment | URL
 **Live** | https://auth.carhire-solutions.com
 
 ## Obtaining Authentication Token
-**Important:** To authenticate a user it is required that the user be *already* created in our systems. Please contact your administrator to have your user created.
+**Important:** To authenticate a user it is required that the user account (login) is *already* created in our systems. 
+The creation of users is usually handled by CARNECT, therefore please contact your integration or account manager with the list of users you want to have created. Alternatively we can create an "admin" user for you and then you create your own users via the Authentication API end-point /create. For details on how to create users, please contact us and refer to the [Full API Documentation](#api-documentation)
 
-Once a user is created they will have an **email** and **password**. The authentication API requires this information.
+A created user has to have an **e-Mail** and **password**, but can also have other attributes such as **first name**, **last name** etc. (more to come).  **E-Mmail** and **password** are required by the authentication API in order to authenticate the user. 
+For an successfully authticated user the API returns a token, else an error message.
 
 *Note*: Make sure that the `Content-Type` header is set to **`application/vnd.api+json`**
 
@@ -68,8 +74,11 @@ const options = {
     'Content-Type': 'application/vnd.api+json',
   },
   body: {
-  	email: 'YOUR_EMAIL',
-  	password: 'YOUR_PASSWORD',
+  	type: "users",
+  	attributes: {
+		email: 'YOUR_EMAIL',
+  		password: 'YOUR_PASSWORD'
+	}
   }
 };
 
@@ -117,15 +126,15 @@ If the request is unsuccessful, one will get a `HTTP 401` with the following bod
 ``` 
 
 ## Using Authentication Token
-The JWT token obtaned from the [above step](#obtaining-authentication-token) can be used for the following services:
+The JWT token obtained from the [above step](#obtaining-authentication-token) can be used for the following services:
 
-* Authentication API
-* Booking API
-* User Management
-* Bridge
+* CARNECT Authentication API - all end-points besides /auths, /token and /recovery, which are public and need no token
+* CARNECT Booking API
+* CARNECT User Management
+* CARNECT Bridge
 
 
-**Important**: Authentication API and most other APIs require that the `Content-Type` be of the type **`application/vnd.api+json`**
+**Important**: Authentication API requires that the `Content-Type` be of the type **`application/vnd.api+json`**
 
 The process remains the same - it needs to be passed in the **Authorization** HTTP header with the **Bearer** scheme:
 ```
@@ -212,9 +221,8 @@ request.get(options, (err, request, body) => {
 
 ![postman-example](postman-01.png?raw=true) 
 
-## API Documentation
-
-The complete intensive API documentation is available at `/docs` endpoint of the APIs:
+## Detailed API Documentation
+The complete intensive Authentication API documentation is available at `/docs` endpoint of the APIs:
 
 
 * **Staging**: https://auth.cnx-uat.com/docs
