@@ -7,7 +7,7 @@
 3. [URLs](#urls)
 4. [Obtaining an Authentication Token](#obtaining-authentication-token)
 5. [Using Authentication Token](#using-authentication-token)
-6. [Full API Documentation](#api-documentation)
+6. [Detailed API Documentation](#detailed-api-documentation)
 7. [Further Help](#further-help)
 
 ## Introduction
@@ -33,7 +33,7 @@ Environment | URL
 
 ## Obtaining Authentication Token
 **Important:** To authenticate a user it is required that the user account (login) is *already* created in our systems. 
-The creation of users is usually handled by CARNECT, therefore please contact your integration or account manager with the list of users you want to have created. Alternatively we can create an "admin" user for you and then you create your own users via the Authentication API end-point /create. For details on how to create users, please contact us and refer to the [Full API Documentation](#api-documentation)
+The creation of users is usually handled by CARNECT, therefore please contact your integration or account manager with the list of users you want to have created. Alternatively we can create an "admin" user for you and then you create your own users via the Authentication API endpoint `/create`. For details on how to create users, please contact us and refer to the [Full API Documentation](#api-documentation)
 
 A created user has to have an **e-Mail** and **password**, but can also have other attributes such as **first name**, **last name** etc. (more to come).  **E-Mail** and **password** are required by the authentication API in order to authenticate the user. 
 For an successfully authticated user the API returns a token, else an error message.
@@ -128,7 +128,7 @@ If the request is unsuccessful, one will get a `HTTP 401` with the following bod
 ## Using Authentication Token
 The JWT token obtained from the [above step](#obtaining-authentication-token) can be used for the following services:
 
-* CARNECT Authentication API - all end-points besides /auths, /token and /recovery, which are public and need no token
+* CARNECT Authentication API - all endpoints besides `/auths`, `/token` and `/recovery`, which are public and need no token
 * CARNECT Booking API
 * CARNECT User Management
 * CARNECT Bridge
