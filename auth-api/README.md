@@ -35,7 +35,7 @@ Environment | URL
 **Important:** To authenticate a user it is required that the user account (login) is *already* created in our systems. 
 The creation of users is usually handled by CARNECT, therefore please contact your integration or account manager with the list of users you want to have created. Alternatively we can create an "admin" user for you and then you create your own users via the Authentication API end-point /create. For details on how to create users, please contact us and refer to the [Full API Documentation](#api-documentation)
 
-A created user has to have an **e-Mail** and **password**, but can also have other attributes such as **first name**, **last name** etc. (more to come).  **E-Mmail** and **password** are required by the authentication API in order to authenticate the user. 
+A created user has to have an **e-Mail** and **password**, but can also have other attributes such as **first name**, **last name** etc. (more to come).  **E-Mail** and **password** are required by the authentication API in order to authenticate the user. 
 For an successfully authticated user the API returns a token, else an error message.
 
 *Note*: Make sure that the `Content-Type` header is set to **`application/vnd.api+json`**
