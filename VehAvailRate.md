@@ -76,13 +76,13 @@ In 2007
 | VehAvailCore Status | String ||| Specifies if the vehicle is available ("Available")                  |
 | Vehicle AirConditionInd | Boolean ||| Flag indicating whether the vehicle has air condition or not |
 | Vehicle TransmissionType | String ||| E.g. "manual" or "automatic" |
-| Vehicle FuelType | String ||| E.g. "Petrol" or "Diesel", s. :doc:`appendix` |
+| Vehicle FuelType | String ||| E.g. "Petrol" or "Diesel" |
 | Vehicle DriveType | String ||| "4WD", "AWD" or "Unspecified" |
 | Vehicle PassengerQuantity | Integer ||| Max. number of passengers |
 | Vehicle BaggageQuantity | Integer ||| Estimated max. number of pieces of luggage |
 | Vehicle VendorCarType | String ||| Supplier specific code of car type |
 | Vehicle Code | String ||| Supplier specific fleet name |
-| Vehicle VehicleType VehicleCategory | Integer ||| Corresponds to the category of the vehicle, e.g. 'Mini', 'Economy' or 'Compact' or 'Premium', as indicated by the :doc:`appendix`|
+| Vehicle VehicleType VehicleCategory | Integer ||| Corresponds to the category of the vehicle, e.g. 'Mini', 'Economy' or 'Compact' or 'Premium'|
 | Vehicle VehicleType DoorCount | Integer ||| Number of doors of the vehicle |
 | Vehicle Size | Integer ||| Corresponds to the size of the vehicle |
 | Vehicle VehMakeModel Name | String ||| Supplier specific name of the fleet |
@@ -96,6 +96,7 @@ In 2007
 | RentalRate VehicleCharge Purpose | String ||| Indicating if the rental price refers to the original price or the discounted one. |
 | RentalRate VehicleCharge | Boolean ||| Flag to indicate if the rental price has been converted between different currencies|
 | TotalCharge EstimatedTotalAmount | Decimal ||| Estimated total amount of the vehicle from the rental price and all fees that apply |
+| Fees | | |||Element containing all mandatory fees for this offer|
 | Fee / IncludedInRate | Boolean ||| Flag indicating if the fee has been already included in rental price |
 | Fee / IncludedInEstTotalInd | Boolean ||| Flag indicating if the fee has been already included in EstimatedTotalAmount |
 | PricedCoverage | ||| Element containing all services (e.g. insurances) included in this offer. Attribute Amount will always be "0.00" and IncludedInRate="true" e.g.: <Charge Amount="0.00" IncludedInRate="true"/> |
