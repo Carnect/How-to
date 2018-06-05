@@ -71,40 +71,39 @@ In 2007
 
 | Parameter | Type | 2007 | 2012 | Description |
 |-|-|-|-|-|
-| AdvanceBooking RulesApplyInd | Boolean | Always true, just for backward compatibility|
-| ID_Context    | String  | The unique identifier (reservation reference) 
-| VehAvailCore Status                  | String            | Specifies if the vehicle is available ("Available")                                 |
-| Vehicle AirConditionInd              | Boolean           | Flag indicating whether the vehicle has air condition or not                        |
-| Vehicle TransmissionType             | String            | E.g. "manual" or "automatic"                                                        |
-| Vehicle FuelType                     | String            | E.g. "Petrol" or "Diesel", s. :doc:`appendix`                                       |
-| Vehicle DriveType                    | String            | "4WD", "AWD" or "Unspecified"                                                       |
-| Vehicle PassengerQuantity            | Integer           | Max. number of passengers                                                           |
-| Vehicle BaggageQuantity              | Integer           | Estimated max. number of pieces of luggage                                          |
-| Vehicle VendorCarType                | String            | Supplier specific code of car type                                                  |
-| Vehicle Code                         | String            | Supplier specific fleet name                                                        |
-| Vehicle VehicleType VehicleCategory  | Integer           | Corresponds to the category of the vehicle, e.g. 'Mini', 'Economy' or 'Compact' or 'Premium', as indicated by the :doc:`appendix`|
-| Vehicle VehicleType DoorCount        | Integer           | Number of doors of the vehicle                                                      |
-| Vehicle Size                         | Integer           | Corresponds to the size of the vehicle                                              |
-| Vehicle VehMakeModel Name            | String            | Supplier specific name of the fleet                                                 |
-| Vehicle VehMakeModel Code            | String            | ACRISS code of the vehicle                                                          |
-| Vehicle PictureURL                   | String            | URL to an image representation of the car. Images have a fixed width of at least 124px and a dynamic height |
-| RentalRate RateDistance Unlimited    | Boolean           | Flag indicating whether there is a mileage limitation or not                        |
-| RentalRate RateDistance DistUnitName | String            | Indicator of the distance unit (only if Unlimited=false), can be either 'km' or 'm' |
-| RentalRate VehicleCharge CurrencyCode| String            | Two letter code of the currency the rental price is referring to                    |
-| RentalRate VehicleCharge Amount      | Decimal           | Rental price of the vehicle standalone                                              |
-| RentalRate VehicleCharge TaxInclusive| Boolean           | Flag indicating whether the local tax is included or not                            |
-| RentalRate VehicleCharge Purpose     | String            | Indicating if the rental price refers to the original price or the discounted one.  |
-| RentalRate VehicleCharge             | Boolean           | Flag to indicate if the rental price has been converted between different currencies|
-| TotalCharge EstimatedTotalAmount     | Decimal           | Estimated total amount of the vehicle from the rental price and all fees that apply |
-| Fee / IncludedInRate                 | Boolean           | Flag indicating if the fee has been already included in rental price                |
-| Fee / IncludedInEstTotalInd          | Boolean           | Flag indicating if the fee has been already included in EstimatedTotalAmount        |
-| PricedCoverage                       |                   | Element containing all services (e.g. insurances) included in this offer. Attribute Amount will always be "0.00" and IncludedInRate="true" e.g.: <Charge Amount="0.00" IncludedInRate="true"/>                                 |
-| PaymentRule                          | String            | Defines payment model of offer (refer to OTA2007a payment code table). It contains the PaymentType element which indicates the payment mode.                           |
-| PaymentType                          | Integer           | Index to indicate the modes of payment, e.g. if the offer is prepaid during         |
-|                                      |                   | reservation or postpaid at the rental station.                                      |
-|                                      |                   | E.g. if PaymentType is "5 - Credit Card" then the reservation for that offer        |
-|                                      |                   | requires credit card information. PaymentType can be either 3, 4, 5 or 32           |
-|                                      |                   | * 3: payment at reservation to Carnect. Credit card data required                   |
-|                                      |                   | * 4: payment before pickup to affiliate. Credit card data required                  |
-|                                      |                   | * 5: payment at reservation to supplier. Credit card data required                  |
-|                                      |                   | * 32: payment at pickup                                                             |
+| AdvanceBooking RulesApplyInd | Boolean ||| Always true, just for backward compatibility|
+| ID_Context | String || | The unique identifier (reservation reference) |
+| VehAvailCore Status | String ||| Specifies if the vehicle is available ("Available")                  |
+| Vehicle AirConditionInd | Boolean ||| Flag indicating whether the vehicle has air condition or not |
+| Vehicle TransmissionType | String ||| E.g. "manual" or "automatic" |
+| Vehicle FuelType | String ||| E.g. "Petrol" or "Diesel", s. :doc:`appendix` |
+| Vehicle DriveType | String ||| "4WD", "AWD" or "Unspecified" |
+| Vehicle PassengerQuantity | Integer ||| Max. number of passengers |
+| Vehicle BaggageQuantity | Integer ||| Estimated max. number of pieces of luggage |
+| Vehicle VendorCarType | String ||| Supplier specific code of car type |
+| Vehicle Code | String ||| Supplier specific fleet name |
+| Vehicle VehicleType VehicleCategory | Integer ||| Corresponds to the category of the vehicle, e.g. 'Mini', 'Economy' or 'Compact' or 'Premium', as indicated by the :doc:`appendix`|
+| Vehicle VehicleType DoorCount | Integer ||| Number of doors of the vehicle |
+| Vehicle Size | Integer ||| Corresponds to the size of the vehicle |
+| Vehicle VehMakeModel Name | String ||| Supplier specific name of the fleet |
+| Vehicle VehMakeModel Code | String ||| ACRISS code of the vehicle |
+| Vehicle PictureURL | String ||| URL to an image representation of the car. Images have a fixed width of at least 124px and a dynamic height |
+| RentalRate RateDistance Unlimited | Boolean ||| Flag indicating whether there is a mileage limitation or not |
+| RentalRate RateDistance DistUnitName | String ||| Indicator of the distance unit (only if Unlimited=false), can be either 'km' or 'm' |
+| RentalRate VehicleCharge CurrencyCode| String ||| Two letter code of the currency the rental price is referring to |
+| RentalRate VehicleCharge Amount | Decimal ||| Rental price of the vehicle standalone |
+| RentalRate VehicleCharge TaxInclusive| Boolean ||| Flag indicating whether the local tax is included or not |
+| RentalRate VehicleCharge Purpose | String ||| Indicating if the rental price refers to the original price or the discounted one. |
+| RentalRate VehicleCharge | Boolean ||| Flag to indicate if the rental price has been converted between different currencies|
+| TotalCharge EstimatedTotalAmount | Decimal ||| Estimated total amount of the vehicle from the rental price and all fees that apply |
+| Fee / IncludedInRate | Boolean ||| Flag indicating if the fee has been already included in rental price |
+| Fee / IncludedInEstTotalInd | Boolean ||| Flag indicating if the fee has been already included in EstimatedTotalAmount |
+| PricedCoverage | ||| Element containing all services (e.g. insurances) included in this offer. Attribute Amount will always be "0.00" and IncludedInRate="true" e.g.: <Charge Amount="0.00" IncludedInRate="true"/> |
+| PaymentRule | String ||| Defines payment model of offer (refer to OTA2007a payment code table). It contains the PaymentType element which indicates the payment mode. |
+| PaymentType | Integer ||| Index to indicate the modes of payment, e.g. if the offer is prepaid during reservation or postpaid at the rental station.                   |
+| Vendorlocation/dropofflocation value | String ||| Denotes whether offer is valid for multiple locations within chosen destination or  not. |
+| VehicleCharge/ Purpose | String ||| Original: Rental price to be paid in currency of the request. Preferred: Rental price in currency preferred in request. |
+| VehicleCharge/RateConvertInd | String ||| Indicates whether the original price was converted or not. Pay attention: currency exchangerate is applied at time of reservation. It may differ at time of pick up. |
+| TPA_Extensions TermsConditions url | String ||| URL to retrieve the supplier specific Terms & Conditions from |
+| Warning Code | Integer ||| Unique ID of the warning message |
+| Warning | String ||| Descriptive text of the warning message |
