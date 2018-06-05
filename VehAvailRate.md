@@ -17,7 +17,7 @@
 | RequestorID Type | String |  :white_check_mark:| :white_check_mark: | Username (affiliate name) |
 | RequestorID ID_Context | String |  :white_check_mark:| :white_check_mark: | Password |
 | RateQueryParameterType | Integer | :white_check_mark: | :x: | Defines the rate query parameter type<br/> 1. LocationID (MNX location code)<br/>2. CityID or AirportID<br/>3. LocationCode (Supplier location code) + Supplier GDS code<br/>4. IATA code
-| PickUpLocation / ReturnLocation CodeContext | Integer |  :white_check_mark:| :white_check_mark: | Defines the location type of pickup or return location<br/>1. City/Downtown request<br/>2. Airport request |
+| PickUpLocation / ReturnLocation CodeContext | Integer |  :white_check_mark:| :white_check_mark: | Defines the location type of pickup or return location<br/>2007:<br/>1. City/Downtown request<br/>2. Airport request<br/><br/>2012:<br/>cityid: Carnect City ID<br/>aipid: Carnect Airport ID<br/>loccode: Supplier location<br/>code + Supplier GDS code<br/> cityiata: IATA code<br/>aipiata : IATA code |
 | VehRentalCore PickUpDateTime | Integer | :white_check_mark:| :white_check_mark: | Defines date and time the customer will pick up his car |
 | VehRentalCore ReturnDateTime | Integer | :white_check_mark:| :white_check_mark: | Defines date and time the customer will drop off his car |
 | PickUpLocation LocationCode | Integer | :white_check_mark:| :white_check_mark: | Defines the location the customer will pick up his car |
@@ -72,7 +72,6 @@ In 2007
 
 | Parameter | Type | 2007 | 2012 | Description |
 |-|-|-|-|-|
-| AdvanceBooking RulesApplyInd | Boolean ||| Always true, just for backward compatibility|
 | ID_Context | String || | The unique identifier (reservation reference) |
 | VehAvailCore Status | String ||| Specifies if the vehicle is available ("Available")                  |
 | Vehicle AirConditionInd | Boolean ||| Flag indicating whether the vehicle has air condition or not |
@@ -109,3 +108,4 @@ In 2007
 | TPA_Extensions TermsConditions url | String ||| URL to retrieve the supplier specific Terms & Conditions from |
 | Warning Code | Integer ||| Unique ID of the warning message |
 | Warning | String ||| Descriptive text of the warning message |
+| AdvanceBooking RulesApplyInd | Boolean ||| Always true, just for backward compatibility|
