@@ -5,4 +5,5 @@ Table of Contents
 
   * [Search](/Search)
     * [City Search](/Search/city-search.md)
-  * [Authentication API](/How-to/auth-api/)
+  * [Authentication API](/auth-api)
+    * [Integration Documentation](/auth-api/README.md)
