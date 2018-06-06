@@ -11,7 +11,7 @@
 7. [Further Help](#further-help)
 
 ## Introduction
-Some of our Carnect applications are protected and the user needs to be authenticated before he is allow to use them, this is namely the case for the CARNECT Bridge application. The authentication of CARNECT Bridge users is handled via the CARNECT Authentication API. It is prepared to serve serves as a single service where the Client application only needs to authenticate once to gain access to all of our CARNECT APIs and services it has permission to. 
+Some of our CARNECT applications are protected and the user needs to be authenticated before he is allowed to use them, this is namely the case for the CARNECT Bridge application. The authentication of CARNECT Bridge users is handled via the CARNECT Authentication API. It is prepared to serve as a single service, where the Client application only needs to authenticate once to gain access to all of our CARNECT APIs and services it has permission to. 
 
 This service is public and can therefore also be used by CARNECT’s Client Partner applications to implement a single-sign-on allowing their users to access Bridge and the Partner's application(s) with the same user login. Once the user is authenticated by the Partner application, the application can also request the authentication of this user for CARNECT Bridge by sending the CARNECT specific login and password via the API. A mapping from the partner login table to the Carnect login table maybe needed. 
 The advantage is that the Client Partner user does not have to login to CARNECT Bridge after he has looged in to the Partner's application, but can be directed to Bridge with the Carnect authentication API being called in the background.
