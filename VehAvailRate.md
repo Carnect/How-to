@@ -69,43 +69,20 @@ In 2007
 
 ### Response
 
-
-| Parameter | Type | 2007 | 2012 | Description |
+|Element|Attribute|2007|2012|Difference|
 |-|-|-|-|-|
-| ID_Context | String |:white_check_mark:| :white_check_mark: | The unique identifier (reservation reference) |
-| VehAvailCore Status | String |:white_check_mark:|:white_check_mark:| Specifies if the vehicle is available ("Available")                  |
-| Vehicle AirConditionInd | Boolean |:white_check_mark:|:white_check_mark:| Flag indicating whether the vehicle has air condition or not |
-| Vehicle TransmissionType | String |:white_check_mark:|:white_check_mark:| E.g. "manual" or "automatic" |
-| Vehicle FuelType | String |:white_check_mark:|:white_check_mark:| E.g. "Petrol" or "Diesel" |
-| Vehicle DriveType | String |:white_check_mark:|:white_check_mark:| "4WD", "AWD" or "Unspecified" |
-| Vehicle PassengerQuantity | Integer |:white_check_mark:|:white_check_mark:| Max. number of passengers |
-| Vehicle BaggageQuantity | Integer |:white_check_mark:|:white_check_mark:| Estimated max. number of pieces of luggage |
-| Vehicle VendorCarType | String |:white_check_mark:|:white_check_mark:| Supplier specific code of car type |
-| Vehicle Code | String |:white_check_mark:|:white_check_mark:| Supplier specific fleet name |
-| Vehicle VehicleType VehicleCategory | Integer |:white_check_mark:|:white_check_mark:| Corresponds to the category of the vehicle, e.g. 'Mini', 'Economy' or 'Compact' or 'Premium'|
-| Vehicle VehicleType DoorCount | Integer |:white_check_mark:|:white_check_mark:| Number of doors of the vehicle |
-| Vehicle Size | Integer |:white_check_mark:|:white_check_mark:| Corresponds to the size of the vehicle |
-| Vehicle VehMakeModel Name | String |:white_check_mark:|:white_check_mark:| Supplier specific name of the fleet |
-| Vehicle VehMakeModel Code | String |:white_check_mark:|:white_check_mark:| ACRISS code of the vehicle |
-| Vehicle PictureURL | String |:white_check_mark:|:white_check_mark:| URL to an image representation of the car. Images have a fixed width of at least 124px and a dynamic height |
-| RentalRate RateDistance Unlimited | Boolean |:white_check_mark:|:white_check_mark:| Flag indicating whether there is a mileage limitation or not |
-| RentalRate RateDistance DistUnitName | String |:white_check_mark:|:white_check_mark:| Indicator of the distance unit (only if Unlimited=false), can be either 'km' or 'm' |
-| RentalRate VehicleCharge CurrencyCode| String |:white_check_mark:|:white_check_mark:| Two letter code of the currency the rental price is referring to |
-| RentalRate VehicleCharge Amount | Decimal |:white_check_mark:|:white_check_mark:| Rental price of the vehicle standalone |
-| RentalRate VehicleCharge TaxInclusive| Boolean |:white_check_mark:|:white_check_mark:| Flag indicating whether the local tax is included or not |
-| RentalRate VehicleCharge Purpose | String |:white_check_mark:|:white_check_mark:| Indicating if the rental price refers to the original price or the discounted one. |
-| RentalRate VehicleCharge RatecodeIndicator | Boolean |:white_check_mark:|:white_check_mark:| Flag to indicate if the rental price has been converted between different currencies|
-| TotalCharge EstimatedTotalAmount | Decimal |:white_check_mark:|:white_check_mark:| Estimated total amount of the vehicle from the rental price and all fees that apply |
-| Fees | | |:white_check_mark:|:white_check_mark:|Element containing all mandatory fees for this offer|
-| Fee / IncludedInRate | Boolean |:white_check_mark:|:white_check_mark:| Flag indicating if the fee has been already included in rental price |
-| Fee / IncludedInEstTotalInd | Boolean |:white_check_mark:|:white_check_mark:| Flag indicating if the fee has been already included in EstimatedTotalAmount |
-| PricedCoverage | |:white_check_mark:|| Element containing all services (e.g. insurances) included in this offer. Attribute Amount will always be "0.00" and IncludedInRate="true" e.g.: <Charge Amount="0.00" IncludedInRate="true"/> |
-| PaymentRule | String |:white_check_mark:|| Defines payment model of offer (refer to OTA2007a payment code table). It contains the PaymentType element which indicates the payment mode. |
-| PaymentType | Integer |:white_check_mark:|| Index to indicate the modes of payment, e.g. if the offer is prepaid during reservation or postpaid at the rental station.                   |
-| Vendorlocation/dropofflocation value | String |:white_check_mark:|| Denotes whether offer is valid for multiple locations within chosen destination or  not. |
-| VehicleCharge/ Purpose | String |:white_check_mark:|| Original: Rental price to be paid in currency of the request. Preferred: Rental price in currency preferred in request. |
-| VehicleCharge/RateConvertInd | String |:white_check_mark:|| Indicates whether the original price was converted or not. Pay attention: currency exchangerate is applied at time of reservation. It may differ at time of pick up. |
-| TPA_Extensions TermsConditions url | String |:white_check_mark:|| URL to retrieve the supplier specific Terms & Conditions from |
-| Warning Code | Integer |:white_check_mark:|| Unique ID of the warning message |
-| Warning | String |:white_check_mark:|| Descriptive text of the warning message |
-| AdvanceBooking RulesApplyInd | Boolean |:white_check_mark:|| Always true, just for backward compatibility|
+|Vehicle|CodeContext|:x:|ACRISS|Is empty in 2007|
+|Vehicle|VehicleCategory|Numbers|Letters|In 2007 the Vehicle Category is set to Numbers, in 2012 to Lettercodes|
+|RateQualifier|VendorRateID|:x:|Showing the unique ID of the Rate|Is moved to another node (&lt;Reference ID_Context=''&gt;)|
+|RateComments RateComment|Name|Enum|:x:|Package descriptor is now an attribute (Name)|
+|RateRestrictions|MaximumAge/MinimumAge|:x:|Number|Moved as child nodes of RateRestrictions (MinimumAge, MaximumAge)|
+|TotalCharge|RateTotalAmount|:x:|Number|Removed. Please use EstimatedTotalAmount|
+|Fee||||Changed in different attributes. Please see documentation|
+|Reference|ID|:x:|String|Can be removed. Same information in ID_Context|
+|Vendor|TravelSector|:x:|String|Can be removed|
+|VendorLocation|LocationCode|String|:x:|ID of the location|
+|DropOffLocation|LocationCode|String|:x:|ID of the location|
+|PricedCoverage Coverage Details|CoverageTextType|:x:|String|Can be removed|
+|PricedCoverage Coverage Details Charge||node|:x:|Is a child node of &lt;Details&gt;|
+|Calculation||node|:x:|Is a child node from &lt;Charge&gt;|
+|PaymentRule|RuleType|:x:|String|Can be removed|
