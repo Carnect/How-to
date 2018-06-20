@@ -69,6 +69,8 @@ In 2007
 
 ### Response
 
+#### Differences
+
 |Element|Attribute|2007|2012|Difference|
 |-|-|-|-|-|
 |Vehicle|CodeContext|:x:|ACRISS|Is empty in 2007|
