@@ -4,7 +4,7 @@ In general: Please use the [online documentation](http://doc.carnect.com/ota2007
 
 ## Available SOAP methods
 * [Availability of Car Offers](/migration/VehAvailRate.md)
-* [Raterules]()
+* [Raterules](/migration/VehRateRule.md)
 * [Reservation]()
 * [Cancellation]()
 * [Retrieve Reservation]()
