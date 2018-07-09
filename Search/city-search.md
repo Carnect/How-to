@@ -2,10 +2,9 @@
 
 If you want to offer a map for downtown search you can use different endpoints of Carnect's SOAP API.
 
-1. You should make a search for all cities in a selected country.
-2. Select from the response the city for which you want to do the downtown search
-3. Make a location search for the selected city 
-4. Select a car rental location for which you want to search for offers. 
+1. Have a City ID available (those can be obtained from City Search and should be stored - new cities are added rarely, 1 day cache for them is recommended).
+2. Search for a location in the selected city and display multiple locations on the map.
+3. Select a car rental location for which you want to search for offers.
    Or iterate over a selected list of car rental locations.
 
 ## City search ##
