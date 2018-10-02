@@ -228,11 +228,9 @@ request.get(options, (err, request, body) => {
 
 The token can be used to directly login a user to [Bridge](https://bridge.carnect.com), to do so, simply replace the token in the following Bridge URL:
 
-`https://bridge.cnx-ft.com/sso/YOUR_TOKEN`
+`https://bridge.carnect.com/sso/YOUR_TOKEN`
 
-Upon navigating to the URL within the browser the user would automatically be logged in.
-
-This feature potentially allows a client to host bridge within their own subsystems, provided they have users set-up to use bridge.
+Upon navigating to the URL within the browser the user would automatically be logged in. This feature potentially allows a client to host bridge within their own subsystems, provided they have users set-up to use bridge.
 
 ![sso-example](sso.png?raw=true) 
 
