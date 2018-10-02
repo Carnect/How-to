@@ -45,7 +45,7 @@ For an successfully authticated user the API returns a token, else an error mess
 ```shell
 curl -X POST "https://auth.cnx-uat.com/auth/token" \
   -H "Content-Type: application/vnd.api+json" 
-  -d '{"email":"YOUR_EMAIL","password":"YOUR_PASSWORD"}'
+  -d '{"data":{"type":"users", "attributes":{"email":"YOUR_EMAIL","password":"YOUR_PASSWORD"}}}'
 ```
 
 **C#**
@@ -54,7 +54,7 @@ using (var client = new HttpClient())
 {
 	client.BaseAddress = new Uri("https://auth.cnx-uat.com");
 	var request = new StringContent(
-                    "{\"email\":\"YOUR_EMAIL\", \"password\":\"YOUR_PASSWORD\"}",
+                    "{\"data\":{\"type\":\"users\", \"attributes\":{\"email\":\"YOUR_EMAIL\",\"password\":\"YOUR_PASSWORD\"}}}",
                     Encoding.UTF8,
                     "application/vnd.api+json");
 	var result = await client.PostAsync("/auth/token", request);
@@ -74,11 +74,13 @@ const options = {
     'Content-Type': 'application/vnd.api+json',
   },
   body: {
-  	type: "users",
-  	attributes: {
-		email: 'YOUR_EMAIL',
-  		password: 'YOUR_PASSWORD'
-	}
+    data: {
+      type: "users",
+      attributes: {
+        email: 'YOUR_EMAIL',
+        password: 'YOUR_PASSWORD'
+      }
+    }
   }
 };
 
@@ -103,10 +105,10 @@ If the request is succesful you with receive a `HTTP 200` with the following bod
 ```json
 {
   "data": {
-    "type": "tokens",
+    "type": "users",
     "id": "00000000-0000-0000-0000-000000000000",
     "attributes": {
-      "value": "eyhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlNmQzYTJhLTMzNTctNDRjOS1hOGZkLTRiZDVhYTNiMzk0NCIsImVtYWlsIjoiY254LWFkbWluQGNhcm5lY3QuY29tIiwiYWZmaWxpYXRlSWQiOjcyOSwiYWZmaWxpYXRlSWRzIjpbNzMxLDcyOV0sInNjb3BlIjpbInVzZXI6KiIsInNob3A6KiIsImdyb3VwOioiLCJvcmdhbml6YXRpb246KiIsInN1cGVydXNlcjoqIiwicm9sZToqIiwiYm9va2luZzoqIl0sImFzc29jaWF0aW9uIjp7InNob3BJZCI6bnVsbCwiZ3JvdXBJZCI6bnVsbCwib3JnYW5pemF0aW9uSWQiOiIxNDVmZDVmOC1lMzk2LTRjOTAtYTRjNi1kZjBmNGQ1NDRjOWIifSwia2lkIjoiNzg5ZGNiOGQtOWEyMi00NjI0LWE4YjItZjFlZTdmMTViZWY0IiwiaWF0IjoxNTI3MjQyMTUwLCJleHAiOjE1MjcyNDMzNTAsImF1ZCI6ImNhcm5lY3QuYXV0aC5hcGkiLCJpc3MiOiJjYXJuZWN0LmF1dGguYXBpIiwianRpIjoiMDcxMWQxOTYtZDI4Ni00NGYwLWIyOTAtMmRhODg3ZGZiMDgzIn0.bDGPpth8MXIc0-54X-W224ZNtTRaNjq-CF_pj8nDJbyCoB-0tMmqorO_mry2gNg9rpSaOBicazCoj18OO61EbgzZaQszqHGzSgXL5VxzwCtwbGxNUHitqDQeX0yZhY2P8I9uDRwOYA7b0XEJP7lQgwjqHzYD-w2axjoH-rV8vdu_LPy48xu8kZnrYVrxM-p6xdAPh77MhBMkELIT0_PXrqEcXmXgC92MwgmBN1Biw62VPcY5q0yg_OYkTAKRXmQQ_i3AO_nFKbYFlkoiLUbsOr-yQY795QQ5o4dL2xYKQaV5ArXZll7mzhPgViz1Dxj0D53Hx8ptw4enx9EMZog"
+      "token": "eyhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlNmQzYTJhLTMzNTctNDRjOS1hOGZkLTRiZDVhYTNiMzk0NCIsImVtYWlsIjoiY254LWFkbWluQGNhcm5lY3QuY29tIiwiYWZmaWxpYXRlSWQiOjcyOSwiYWZmaWxpYXRlSWRzIjpbNzMxLDcyOV0sInNjb3BlIjpbInVzZXI6KiIsInNob3A6KiIsImdyb3VwOioiLCJvcmdhbml6YXRpb246KiIsInN1cGVydXNlcjoqIiwicm9sZToqIiwiYm9va2luZzoqIl0sImFzc29jaWF0aW9uIjp7InNob3BJZCI6bnVsbCwiZ3JvdXBJZCI6bnVsbCwib3JnYW5pemF0aW9uSWQiOiIxNDVmZDVmOC1lMzk2LTRjOTAtYTRjNi1kZjBmNGQ1NDRjOWIifSwia2lkIjoiNzg5ZGNiOGQtOWEyMi00NjI0LWE4YjItZjFlZTdmMTViZWY0IiwiaWF0IjoxNTI3MjQyMTUwLCJleHAiOjE1MjcyNDMzNTAsImF1ZCI6ImNhcm5lY3QuYXV0aC5hcGkiLCJpc3MiOiJjYXJuZWN0LmF1dGguYXBpIiwianRpIjoiMDcxMWQxOTYtZDI4Ni00NGYwLWIyOTAtMmRhODg3ZGZiMDgzIn0.bDGPpth8MXIc0-54X-W224ZNtTRaNjq-CF_pj8nDJbyCoB-0tMmqorO_mry2gNg9rpSaOBicazCoj18OO61EbgzZaQszqHGzSgXL5VxzwCtwbGxNUHitqDQeX0yZhY2P8I9uDRwOYA7b0XEJP7lQgwjqHzYD-w2axjoH-rV8vdu_LPy48xu8kZnrYVrxM-p6xdAPh77MhBMkELIT0_PXrqEcXmXgC92MwgmBN1Biw62VPcY5q0yg_OYkTAKRXmQQ_i3AO_nFKbYFlkoiLUbsOr-yQY795QQ5o4dL2xYKQaV5ArXZll7mzhPgViz1Dxj0D53Hx8ptw4enx9EMZog"
     }
   }
 }
@@ -220,6 +222,18 @@ request.get(options, (err, request, body) => {
 6. View your response
 
 ![postman-example](postman-01.png?raw=true) 
+ 
+ 
+#### Using Token in Single Sign-On (SSO)
+
+The token can be used to directly login a user to [Bridge](https://bridge.carnect.com), to do so, simply replace the token in the following Bridge URL:
+
+`https://bridge.carnect.com/sso/YOUR_TOKEN`
+
+Upon navigating to the URL within the browser the user would automatically be logged in. This feature potentially allows a client to host bridge within their own subsystems, provided they have users set-up to use bridge.
+
+![sso-example](sso.png?raw=true) 
+
 
 ## Detailed API Documentation
 The complete intensive Authentication API documentation is available at `/docs` endpoint of the APIs:
