@@ -7,6 +7,9 @@
 3. [URLs](#urls)
 4. [Obtaining an Authentication Token](#obtaining-authentication-token)
 5. [Using Authentication Token](#using-authentication-token)
+	1. [Programmatically](#using-token-programmatically)
+	2. [REST Client / Postman](#using-token-in-rest-client)
+	3. [Bridge / Single Sign-On](#using-token-in-single-sign-on-sso)
 6. [Detailed API Documentation](#detailed-api-documentation)
 7. [Further Help](#further-help)
 
