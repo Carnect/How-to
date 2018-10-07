@@ -11,10 +11,10 @@ There is no need of a big change. Please test it properly.
 
 |Parameter|Type|2007|2012|Description|
 |--|--|--|--|--|
-|OTA_VehRateRuleRS| node | :x: | :white_check_mark:|In 2007 it is VehRateRuleRS|
-|Success| node | :x: |:white_check_mark:| non existent in 2007|
-|VehRentalCore > PickUpLocation | node | :x: |:white_check_mark:| |
-|VehRentalCore > DropOffLocation | node | :x: |:white_check_mark:| |
+|OTA_VehRateRuleRS| node | ❌ | :white_check_mark:|In 2007 it is VehRateRuleRS|
+|Success| node | ❌ |:white_check_mark:| non existent in 2007|
+|VehRentalCore > PickUpLocation | node | ❌ |:white_check_mark:| |
+|VehRentalCore > DropOffLocation | node | ❌ |:white_check_mark:| |
 |Vehicle > VehType [VehicleCategory] | String | :white_check_mark: | :white_check_mark: | Different values. See appendix in documentation|
 |
 
@@ -65,21 +65,21 @@ In 2007
 
 |Element|Attribute|2007|2012|Difference|
 |-|-|-|-|-|
-|Vehicle|CodeContext|:x:|ACRISS|Is empty in 2007|
+|Vehicle|CodeContext|❌|ACRISS|Is empty in 2007|
 |Vehicle|VehicleCategory|Numbers|Letters|In 2007 the Vehicle Category is set to Numbers, in 2012 to Lettercodes|
-|RateQualifier|VendorRateID|:x:|Showing the unique ID of the Rate|Is moved to another node (&lt;Reference ID_Context=''&gt;)|
-|RateComments RateComment|Name|Enum|:x:|Package descriptor is now an attribute (Name)|
-|RateRestrictions|MaximumAge/MinimumAge|:x:|Number|Moved as child nodes of RateRestrictions (MinimumAge, MaximumAge)|
-|TotalCharge|RateTotalAmount|:x:|Number|Removed. Please use EstimatedTotalAmount|
+|RateQualifier|VendorRateID|❌|Showing the unique ID of the Rate|Is moved to another node (&lt;Reference ID_Context=''&gt;)|
+|RateComments RateComment|Name|Enum|❌|Package descriptor is now an attribute (Name)|
+|RateRestrictions|MaximumAge/MinimumAge|❌|Number|Moved as child nodes of RateRestrictions (MinimumAge, MaximumAge)|
+|TotalCharge|RateTotalAmount|❌|Number|Removed. Please use EstimatedTotalAmount|
 |Fee||||Changed in different attributes. Please see documentation|
-|Reference|ID|:x:|String|Can be removed. Same information in ID_Context|
-|Vendor|TravelSector|:x:|String|Can be removed|
-|VendorLocation|LocationCode|String|:x:|ID of the location|
-|DropOffLocation|LocationCode|String|:x:|ID of the location|
-|PricedCoverage Coverage Details|CoverageTextType|:x:|String|Can be removed|
-|PricedCoverage Coverage Details Charge||node|:x:|Is a child node of &lt;Details&gt;|
-|Calculation||node|:x:|Is a child node from &lt;Charge&gt;|
-|PaymentRule|RuleType|:x:|String|Can be removed|
+|Reference|ID|❌|String|Can be removed. Same information in ID_Context|
+|Vendor|TravelSector|❌|String|Can be removed|
+|VendorLocation|LocationCode|String|❌|ID of the location|
+|DropOffLocation|LocationCode|String|❌|ID of the location|
+|PricedCoverage Coverage Details|CoverageTextType|❌|String|Can be removed|
+|PricedCoverage Coverage Details Charge||node|❌|Is a child node of &lt;Details&gt;|
+|Calculation||node|❌|Is a child node from &lt;Charge&gt;|
+|PaymentRule|RuleType|❌|String|Can be removed|
 
 ### Example
 

@@ -13,16 +13,16 @@ There is no need of a big change. Please test it properly.
 
 | Parameter | Type | 2007 | 2012| Description |
 |---|---|---|---|---|
-| success | node | :x: | :white_check_mark: ||
+| success | node | ❌ | ✅ ||
 | VehSegmentCore > ConfID | | [ID_Context] is used | [ID] is used| Different attributes are used. In 2012 this Element can occur more than once.  <br/><ul><li>8 (supplier reference)</li><li>16 (Affiliate’s reference)</li><li>43 (Carnect reference number)|
-| Vendor[CodeContext] | Attribute | :x: | :white_check_mark: | |
-| Vendor | String | :white_check_mark: | :x: | |
-| VehRentalCore > PickUpLocation[CodeContext] | String | :white_check_mark: | :white_check_mark: | different code context |
-| Vehicle[VendorCarType] | String | :white_check_mark: | :white_check_mark: | different content |
-| Vehicle[VendorCarType] | String | :x: | :white_check_mark: | |
-| VehSegmentInfo > PaymentRules > PaymentRule[RuleType] | String | :x: | :white_check_mark: | |
-| PricedCoverage > Coverage > Details | node |:white_check_mark: |:white_check_mark: |see snippets|
-| VehResRSInfo > TPA_Extensions | node |:white_check_mark:|:white_check_mark:| see snippets |
+| Vendor[CodeContext] | Attribute | ❌ | ✅ | |
+| Vendor | String | ✅ | ❌ | |
+| VehRentalCore > PickUpLocation[CodeContext] | String | ✅ | ✅ | different code context |
+| Vehicle[VendorCarType] | String | ✅ | ✅ | different content |
+| Vehicle[VendorCarType] | String | ❌ | ✅ | |
+| VehSegmentInfo > PaymentRules > PaymentRule[RuleType] | String | ❌ | ✅ | |
+| PricedCoverage > Coverage > Details | node |✅ |✅ |see snippets|
+| VehResRSInfo > TPA_Extensions | node |✅|✅| see snippets |
 
 ## Snippets
 
