@@ -7,20 +7,23 @@
 3. [URLs](#urls)
 4. [Obtaining an Authentication Token](#obtaining-authentication-token)
 5. [Using Authentication Token](#using-authentication-token)
+	1. [Programmatically](#using-token-programmatically)
+	2. [REST Client / Postman](#using-token-in-rest-client)
+	3. [CARNECT Bridge / Single Sign-On](#using-token-in-single-sign-on-sso)
 6. [Detailed API Documentation](#detailed-api-documentation)
 7. [Further Help](#further-help)
 
 ## Introduction
 Some of our CARNECT applications are protected and the user needs to be authenticated before he is allowed to use them, this is namely the case for the CARNECT Bridge application. The authentication of CARNECT Bridge users is handled via the CARNECT Authentication API. It is prepared to serve as a single service, where the Client application only needs to authenticate once to gain access to all of our CARNECT APIs and services it has permission to. 
 
-This service is public and can therefore also be used by CARNECT’s Client Partner applications to implement a single-sign-on allowing their users to access Bridge and the Partner's application(s) with the same user login. Once the user is authenticated by the Partner application, the application can also request the authentication of this user for CARNECT Bridge by sending the CARNECT specific login and password via the API. A mapping from the partner login table to the Carnect login table maybe needed. 
-The advantage is that the Client Partner user does not have to login to CARNECT Bridge after he has looged in to the Partner's application, but can be directed to Bridge with the Carnect authentication API being called in the background.
+This service is public and can therefore also be used by CARNECT’s Client Partner applications to implement a single-sign-on allowing their users to access Bridge and the Partner's application(s) with the same user login. Once the user is authenticated by the Partner application, the application can also request the authentication of this user for CARNECT Bridge by sending the CARNECT specific login and password via the Authentication API. A mapping from the partner login to the CARNECT login ist most likely needed. 
+The advantage is that the Client Partner user does not have to login to CARNECT Bridge after he has logged into the Partner's application, but can be directed to Bridge with the CARNECT authentication API being called in the background.
 
 The CARNECT Authetication API follows the REST conventions and the JSON Web Token (JWT) approach.
 
 ## Requirements
 To communicate with our API, one requires *either*:
-1. A Programming Language supporting HTTP calls
+1. A Programming Language supporting HTTP calls *OR*
 2. REST Client eg. [Postman](https://www.getpostman.com/apps)
 	
 ## URLs
@@ -32,8 +35,9 @@ Environment | URL
 **Live** | https://auth.carhire-solutions.com
 
 ## Obtaining Authentication Token
-**Important:** To authenticate a user it is required that the user account (login) is *already* created in our systems. 
-The creation of users is usually handled by CARNECT, therefore please contact your integration or account manager with the list of users you want to have created. Alternatively we can create an "admin" user for you and then you create your own users via the Authentication API endpoint `/create`. For details on how to create users, please contact us and refer to the [Detailed API Documentation](#detailed-api-documentation)
+**Important:** To authenticate a user it is required that the user account (login) is *already* created in te CARNECT system. 
+The creation of users is usually handled by CARNECT, therefore please contact your integration or account manager with the list of users you want to have created. We make sure that the user is associated to your Partner account or a sub-organisation account, such as an booking   agency or shop. The hierarchy assignment will determine the access rights to existing reservations as much as a possible user role.
+Alternatively we can create an "admin" user for you and then you create your own users via the Authentication API endpoint `/create`. For details on how to create users, please contact us and refer to the [Detailed API Documentation](#detailed-api-documentation)
 
 A created user has to have an **e-Mail** and **password**, but can also have other attributes such as **first name**, **last name** etc. (more to come).  **E-Mail** and **password** are required by the authentication API in order to authenticate the user. 
 For an successfully authticated user the API returns a token, else an error message.
@@ -226,11 +230,11 @@ request.get(options, (err, request, body) => {
  
 #### Using Token in Single Sign-On (SSO)
 
-The token can be used to directly login a user to [Bridge](https://bridge.carnect.com), to do so, simply replace the token in the following Bridge URL:
+The token can be used to directly login a user to [Bridge](https://bridge.carnect.com) and avoid that the user has to login again, i.e. the CARNECT Bridge login page will not be displayed any longer. To do so, simply replace `YOUR_TOKEN` in the following Bridge URL with the respective user token:
 
 `https://bridge.carnect.com/sso/YOUR_TOKEN`
 
-Upon navigating to the URL within the browser the user would automatically be logged in. This feature potentially allows a client to host bridge within their own subsystems, provided they have users set-up to use bridge.
+Upon navigating to the URL within the browser the user would automatically be logged in. This feature potentially allows a client to host CARNECT Bridge within their own subsystems, provided they have users set-up to use CARNECT Bridge.
 
 ![sso-example](sso.png?raw=true) 
 
