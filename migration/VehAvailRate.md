@@ -1,5 +1,7 @@
 ### Availability of Car Offers
 
+Please see the differences in the following table.
+
 #### Request
 
 [Documentation](http://doc.carnect.com/ota2007/quote.html)
