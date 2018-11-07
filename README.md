@@ -5,6 +5,7 @@ Table of Contents
 
   * [Search](/Search)
     * [City Search](/Search/city-search.md)
+    * [Car Category Filters](/Search/filters.md)
   * [Authentication API](/auth-api)
     * [Integration Documentation](/auth-api/README.md)
   * [Migration](/migration)
