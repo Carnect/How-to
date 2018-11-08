@@ -31,6 +31,7 @@ In order to correctly filter the provided car categories by supplier it is recom
 |                      | K Commercial Van/Truck |                            |                                      | 
 
 
+Find out more about the ACRISS code at <http://www.acriss.org> and <https://en.wikipedia.org/wiki/ACRISS_Car_Classification_Code>.
 
 
 In the Carnect OTA API Integration Documentation the ACRISS code is sent with every car rental offer in the getVehAvailRate Response (please compare example below):
