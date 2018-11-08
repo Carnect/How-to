@@ -33,20 +33,18 @@ In order to correctly filter the provided car categories by supplier it is recom
 
 Find out more about the ACRISS code at <http://www.acriss.org> and <https://en.wikipedia.org/wiki/ACRISS_Car_Classification_Code>.
 
-
-In the Carnect OTA API Integration Documentation the ACRISS code is sent with every car rental offer in the getVehAvailRate Response (please compare example below):
-
+In the Carnect OTA API the ACRISS code is sent with every car rental offer in the getVehAvailRate response. In this example the code is `EDMR`:
 
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <VehAvailCore Status="Available">
-    <Vehicle AirConditionInd="true" TransmissionType="Manual" FuelType="Petrol" DriveType="Unspecified" PassengerQuantity="5" BaggageQuantity="0" VendorCarType="B" Code="Seat Ibiza" CodeContext="">
-        <VehType VehicleCategory="1" DoorCount="4" />
-               <VehClass Size="3" />
-                   <VehMakeModel Name="Seat Ibiza" Code="EDMR" />
-                   <PictureURL>https://static.carhire-solutions.com/images/car/Avis/small/es0_b_lrg01.jpg</PictureURL>
-                     </Vehicle>
-
-
+   <Vehicle AirConditionInd="true" TransmissionType="Manual" FuelType="Petrol" DriveType="Unspecified" PassengerQuantity="5" BaggageQuantity="0" VendorCarType="B" Code="Seat Ibiza" CodeContext="">
+      <VehType VehicleCategory="1" DoorCount="4" />
+      <VehClass Size="3" />
+      <VehMakeModel Name="Seat Ibiza" Code="EDMR" />
+      <PictureURL>https://static.carhire-solutions.com/images/car/Avis/small/es0_b_lrg01.jpg</PictureURL>
+   </Vehicle>
+</VehAvailCore>
 ```
 
 For the clear overview of different categories Carnect has decided for 7 different car groups which are displayed on its own B2C sites:
