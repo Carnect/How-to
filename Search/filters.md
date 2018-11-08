@@ -1,6 +1,6 @@
 # Car Category Filters
 
-In order to correctly filter the provided car categories by supplier it is recommended to use the acriss code of every car group. ACRISS is an industry standard vehicle matrix to define car models ensuring a like to like comparison of vehicles. This easy-to-use matrix consists of four categories. Each position in the four character vehicle code represents a definable characteristic of the vehicle. The expanded vehicle matrix makes it possible to have 400 vehicle types. Car codes are created by assigning one character from each column and combining them into a four-character car code:
+In order to correctly filter the provided car categories by supplier it is recommended to use the ACRISS code of every car group. ACRISS is an industry standard vehicle matrix to define car models ensuring a like to like comparison of vehicles. This easy-to-use matrix consists of four categories. Each position in the four character vehicle code represents a definable characteristic of the vehicle. The expanded vehicle matrix makes it possible to have 400 vehicle types. Car codes are created by assigning one character from each column and combining them into a four-character car code:
 
 ## ACRISS Code Map
 
@@ -53,7 +53,7 @@ For the clear overview of different categories Carnect has decided for 7 differe
 
 
 ## Car groups
-Please find below the explanation of how the acriss codes are correctly mapped to the above car groups.
+Please find below the explanation of how the ACRISS codes can be mapped to the above car groups.
 
 
 ### Small
