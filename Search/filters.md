@@ -2,7 +2,36 @@
 
 In order to correctly filter the provided car categories by supplier it is recommended to use the acriss code of every car group. ACRISS is an industry standard vehicle matrix to define car models ensuring a like to like comparison of vehicles. This easy-to-use matrix consists of four categories. Each position in the four character vehicle code represents a definable characteristic of the vehicle. The expanded vehicle matrix makes it possible to have 400 vehicle types. Car codes are created by assigning one character from each column and combining them into a four-character car code:
 
-![ACRISS Code Map](acriss-codes.png)
+## ACRISS Code Map
+
+
+| Category             | Type                   | Transmission/Drive         | Fuel/Air cond.                       | 
+|----------------------|------------------------|----------------------------|--------------------------------------| 
+| M Mini               | B 2-3 Door             | M Manual Unspecified Drive | R Unspecified Fuel/Power With Air    | 
+| N Mini Elite         | C 2/4 Door             | N Manual 4WD               | N Unspecified Fuel/Power Without Air | 
+| E Economy            | D 4-5 Door             | C Manual AWD               | D Diesel Air                         | 
+| H Economy Elite      | W Wagon/Estate         | A Auto Unspecified Drive   | Q Diesel No Air                      | 
+| C Compact            | V Passenger Van        | B Auto 4WD                 | H Hybrid Air                         | 
+| D Compact Elite      | L Limousine            | D Auto AWD                 | I Hybrid No Air                      | 
+| I Intermediate       | S Sport                |                            | E Electric Air                       | 
+| J Intermediate Elite | T Convertible          |                            | C Electric No Air                    | 
+| S Standard           | F SUV                  |                            | L LPG/Compressed Gas Air             | 
+| R Standard Elite     | J Open Air All Terrain |                            | S LPG/Compressed Gas No Air          | 
+| F Fullsize           | X Special              |                            | A Hydrogen Air                       | 
+| G Fullsize Elite     | P Pick up Regular Car  |                            | B Hydrogen No Air                    | 
+| P Premium            | Q Pick up Extended Car |                            | M Multi Fuel/Power Air               | 
+| U Premium Elite      | Z Special Offer Car    |                            | F Multi fuel/power No Air            | 
+| L Luxury             | E Coupe                |                            | V Petrol Air                         | 
+| W Luxury Elite       | M Monospace            |                            | Z Petrol No Air                      | 
+| O Oversize           | R Recreational Vehicle |                            | U Ethanol Air                        | 
+| X Special            | H Motor Home           |                            | X Ethanol No Air                     | 
+|                      | Y 2 Wheel Vehicle      |                            |                                      | 
+|                      | N Roadster             |                            |                                      | 
+|                      | G Crossover            |                            |                                      | 
+|                      | K Commercial Van/Truck |                            |                                      | 
+
+
+
 
 In the Carnect OTA API Integration Documentation the ACRISS code is sent with every car rental offer in the getVehAvailRate Response (please compare example below):
 
