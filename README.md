@@ -12,3 +12,5 @@ Table of Contents
   * [Migration](/migration)
     * [Migration 2012->2007 Documentation](/migration/README.md)
   * [Frontend Proposals](/frontend-proposals/README.md)
+  * [Whitelabel](/Whitelabel)
+    * [Widget Usage](/Whitelabel/Widget/README.md)
