@@ -1,2 +1,6 @@
-#theme: jekyll-theme-minimal
-remote_theme: "mmistakes/minimal-mistakes"
+theme: jekyll-theme-cayman
+title: [How-tos for Carnect Products]
+description: [A collection of different how tos for Carnect Products]
+#remote_theme: "wild-flame/jekyll-simple"
+plugins:
+  - jekyll-include-cache
